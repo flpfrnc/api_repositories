@@ -1,0 +1,20 @@
+{
+  "name": "api_repositories",
+  "version": "1.0.0",
+  "description": "api created to list latest C# Blip repositories",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
