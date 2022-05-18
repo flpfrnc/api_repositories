@@ -2,11 +2,11 @@
     {
         "id": 1,
         "name": "all repos",
-        "url": "http://127.0.0.1:5000/repos/blip"
+        "url": "/repos/blip"
     },
     {
         "id": 2,
         "name": "repo by lang - mock: C#",
-        "url": "http://127.0.0.1:5000/repos/blip/CS"
+        "url": "/repos/blip/CS"
     }
 ]
