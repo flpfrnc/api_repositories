@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "api created to list latest C# Blip repositories",
   "main": "server.js",
+  "engines": { 
+    "node": "16.x"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon server.js"
+    "server": "node server.js"
   },
   "author": "",
   "license": "MIT",
