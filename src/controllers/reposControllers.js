@@ -53,7 +53,7 @@ const getBlipReposByLang = async (req, res) => {
 }
 
 
-const getLastCSRepos = async (req, res) => {
+const getOldestCSRepos = async (req, res) => {
     let customResponse = {}
 
     try {
