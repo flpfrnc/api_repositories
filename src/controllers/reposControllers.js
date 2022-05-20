@@ -76,4 +76,4 @@ const getOldestCSRepos = async (req, res) => {
     }
 }
 
-module.exports = { home, getBlipReposByLang, getAllRepos, getLastCSRepos }
+module.exports = { home, getBlipReposByLang, getAllRepos, getOldestCSRepos }
