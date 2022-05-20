@@ -39,11 +39,11 @@ const getBlipReposByLang = async (req, res) => {
             (
                 limit
                 ? 
-                    repo.language === language && idx <= limit 
+                    repo.language === language && idx < limit 
                 : 
                     repo.language === language
             ))
-            
+
             res.status(200).send(filteredRepos)
         }
     }catch(error){
@@ -59,8 +59,13 @@ const getLastCSRepos = async (req, res) => {
     try {
         if(url) {
             let requestedRepos = await axios.get(url);
-            requestedRepos.data.filter((repo, idx) => {
-                if (repo.language === "C#" && idx <= 5) customResponse[`repository${idx+1}`] = repo 
+            
+            requestedRepos.data.filter((repo) => {
+                let responseSize = Object.keys(customResponse).length
+                
+                if (repo.language === "C#" && responseSize < 5) {
+                    customResponse[`repository${responseSize + 1}`] = repo 
+                }
             })
             
             res.status(200).send(customResponse)
