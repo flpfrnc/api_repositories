@@ -52,4 +52,23 @@ const getBlipReposByLang = async (req, res) => {
     }
 }
 
-module.exports = { home, getBlipReposByLang, getAllRepos }
+
+const getLastCSRepos = async (req, res) => {
+    let customResponse = {}
+
+    try {
+        if(url) {
+            let requestedRepos = await axios.get(url);
+            requestedRepos.data.filter((repo, idx) => {
+                if (repo.language === "C#" && idx <= 5) customResponse[`repository${idx+1}`] = repo 
+            })
+            
+            res.status(200).send(customResponse)
+        }
+    }catch(error){
+        console.error(error)
+        res.status(500).send(error)
+    }
+}
+
+module.exports = { home, getBlipReposByLang, getAllRepos, getLastCSRepos }
